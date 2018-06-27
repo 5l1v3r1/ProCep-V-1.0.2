@@ -44,6 +44,18 @@
  DEFAULT=`echo -en "\e[49m"`
 
 clear
+gpg2 2>/dev/null 1>&2
+ToolInstalled=$?
+
+if [[ ToolInstalled = 0 ]]; then
+   echo "Required Tool installed, displaying menu.."
+   sleep2
+elif [[ ToolInstalled = 1 ]]; then
+   echo "Oops, seems a required tool is NOT installed."
+   echo "Installaing..... (We don't ask to install since its a REQUIRED tool!)"
+   apt-get install gpg2
+   echo "Finish!"
+fi
 
 localdir=$( pwd )
 echo $lightyellow$bold
