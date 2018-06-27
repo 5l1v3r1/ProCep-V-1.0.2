@@ -44,7 +44,7 @@
  DEFAULT=`echo -en "\e[49m"`
 
 clear
-gpg2 2>/dev/null 1>&2
+gpg2 -h 2>/dev/null 1>&2
 ToolInstalled=$?
 
 if [[ ToolInstalled = 0 ]]; then
