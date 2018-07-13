@@ -52,7 +52,7 @@ if [[ ToolInstalled = 0 ]]; then
    sleep2
 elif [[ ToolInstalled = 1 ]]; then
    echo "Oops, seems a required tool is NOT installed."
-   echo "Installaing..... (We don't ask to install since its a REQUIRED tool!)"
+   echo "Installing..... (We don't ask to install since its a REQUIRED tool!)"
    apt-get install gpg2
    echo "Finish!"
 fi
